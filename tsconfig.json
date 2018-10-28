@@ -2,5 +2,5 @@
   // This file is only necessary until tslint has TS3 references support
   // See also https://github.com/palantir/tslint/issues/4137
   "extends": "./packages/tsconfig.settings.json",
-  "include": ["./packages/*/src/**/*.ts", "./packages/*/test/**/*.ts"]
+  "include": ["./packages/*/src/**/*.ts", "./packages/*/test/**/*.ts", "./examples/src/**/*.ts"]
 }

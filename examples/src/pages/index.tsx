@@ -8,7 +8,9 @@ const IndexPage: React.SFC<RouteComponentProps> = () => (
       <li>
         <Link to="/use-media">Media Queries</Link>
       </li>
-      <li>Authentication</li>
+      <li>
+        <Link to="/use-vertical-scroll">Vertical Scroll</Link>
+      </li>
     </ul>
   </div>
 )

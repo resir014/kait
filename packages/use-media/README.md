@@ -4,7 +4,10 @@
 
 ## Install
 
-```sh-session
+```bash
+# yarn
+$ yarn add @kait/use-media
+# npm
 $ npm i @kait/use-media
 ```
 

@@ -1,4 +1,4 @@
 {
   "files": [],
-  "references": [{ "path": "use-auth" }, { "path": "use-media" }]
+  "references": [{ "path": "use-vertical-scroll" }, { "path": "use-media" }]
 }

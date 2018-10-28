@@ -3,5 +3,13 @@
   "tabWidth": 2,
   "printWidth": 140,
   "singleQuote": true,
-  "trailingComma": "none"
+  "trailingComma": "none",
+  "overrides": [
+    {
+      "files": "*.md",
+      "options": {
+        "printWidth": 80
+      }
+    }
+  ]
 }

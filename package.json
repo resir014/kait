@@ -4,6 +4,7 @@
     "build": "tsc -b packages",
     "clean": "rimraf ./packages/*/lib",
     "dev": "parcel examples/index.html",
+    "format": "prettier --write 'packages/**/*.{ts,tsx}'",
     "lint": "tslint -p tsconfig.json"
   },
   "devDependencies": {

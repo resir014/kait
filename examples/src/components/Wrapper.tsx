@@ -10,7 +10,7 @@ const Wrapper: React.SFC = ({ children }) => (
     <Normalize />
     <Navigation>
       <NavLink to="/">home</NavLink> | <NavLink to="/use-media">use-media</NavLink> |{' '}
-      <NavLink to="/use-vertical-scroll">use-vertical-scroll</NavLink>{' '}
+      <NavLink to="/use-vertical-scroll">use-vertical-scroll</NavLink> | <NavLink to="/use-theme">use-theme</NavLink>
     </Navigation>
     {children}
   </Root>

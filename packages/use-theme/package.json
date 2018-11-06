@@ -1,6 +1,6 @@
 {
   "name": "@kait/use-theme",
-  "version": "0.1.0",
+  "version": "0.0.1",
   "description": "Theme. Powered by React hooks.",
   "main": "lib/index.js",
   "typings": "lib/index.d.ts",

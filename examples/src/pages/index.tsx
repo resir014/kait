@@ -1,10 +1,11 @@
 import * as React from 'react'
 import { Link, RouteComponentProps } from '@reach/router'
-import Page from '../../components/Page'
+import Page from '../components/Page'
+import PageTitle from '../components/PageTitle'
 
 const IndexPage: React.SFC<RouteComponentProps> = () => (
   <Page>
-    <h1>Examples</h1>
+    <PageTitle>Examples</PageTitle>
     <ul>
       <li>
         <Link to="/use-media">Media Queries</Link>

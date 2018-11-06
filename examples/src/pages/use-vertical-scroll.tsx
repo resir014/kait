@@ -1,7 +1,9 @@
 import * as React from 'react'
-import { Link, RouteComponentProps } from '@reach/router'
+import { RouteComponentProps } from '@reach/router'
 import useVerticalScroll from '../../../packages/use-vertical-scroll/src'
-import Page from '../../components/Page'
+import Page from '../components/Page'
+import styled from 'styled-components'
+import PageTitle from '../components/PageTitle'
 
 const styles: React.CSSProperties = {
   position: 'fixed',
@@ -12,6 +14,22 @@ const styles: React.CSSProperties = {
   textAlign: 'center'
 }
 
+interface HeaderProps {
+  bgColor?: string
+  textColor?: string
+}
+
+const State = styled<HeaderProps, 'div'>('div')`
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 250px;
+  padding: 16px;
+  text-align: center;
+  color: ${props => props.textColor || '#fff'};
+  background-color: ${props => props.bgColor || '#006fe6'};
+`
+
 const VerticalScrollExample: React.SFC<RouteComponentProps> = () => {
   const shallowThreshold = useVerticalScroll(0, 249)
   const mediumThreshold = useVerticalScroll(250, 499)
@@ -19,13 +37,14 @@ const VerticalScrollExample: React.SFC<RouteComponentProps> = () => {
 
   return (
     <Page>
-      <h1>Vertical Scroll</h1>
-      {shallowThreshold && <div style={{ ...styles, backgroundColor: 'red', color: '#fff' }}>Scroll State: shallow</div>}
-      {mediumThreshold && <div style={{ ...styles, backgroundColor: 'yellow' }}>Scroll State: medium</div>}
-      {deepThreshold && <div style={{ ...styles, backgroundColor: 'blue', color: '#fff' }}>Scroll State: deep</div>}
-      <p>
-        <Link to="/">Go back home</Link>
-      </p>
+      <PageTitle>Vertical Scroll</PageTitle>
+      {shallowThreshold && <State bgColor="red">Scroll State: shallow</State>}
+      {mediumThreshold && (
+        <State textColor="#333" bgColor="yellow">
+          Scroll State: medium
+        </State>
+      )}
+      {deepThreshold && <State>Scroll State: deep</State>}
 
       <p>
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Si enim Zenoni licuit, cum rem aliquam invenisset inusitatam, inauditum

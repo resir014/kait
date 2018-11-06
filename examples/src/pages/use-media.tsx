@@ -1,19 +1,36 @@
 import * as React from 'react'
-import { RouteComponentProps, Link } from '@reach/router'
+import styled from 'styled-components'
+import { RouteComponentProps } from '@reach/router'
 import useMedia from '../../../packages/use-media/src'
-import Page from '../../components/Page'
+import Page from '../components/Page'
+import PageTitle from '../components/PageTitle'
 
-const MobileHeader = () => <div>MobileHeader</div>
-const DesktopHeader = () => <div>DesktopHeader</div>
+interface HeaderProps {
+  bgColor?: string
+  textColor?: string
+}
+
+const Header = styled<HeaderProps, 'div'>('div')`
+  margin: 1.5rem 0;
+  padding: 1.5rem;
+  color: ${props => props.textColor || '#fff'};
+  background-color: ${props => props.bgColor || '#006fe6'};
+`
+
+const MobileHeader = () => (
+  <Header textColor="yellow" bgColor="#333">
+    MobileHeader
+  </Header>
+)
+const DesktopHeader = () => <Header bgColor="rebeccapurple">DesktopHeader</Header>
 
 const MediaExample: React.SFC<RouteComponentProps> = () => {
   const mobile = useMedia('(max-width: 640px)')
 
   return (
     <Page>
-      <h1>Media Queries</h1>
+      <PageTitle>Media Queries</PageTitle>
       {mobile ? <MobileHeader /> : <DesktopHeader />}
-      <Link to="/">Go back home</Link>
     </Page>
   )
 }

@@ -1,0 +1,23 @@
+{
+  "name": "@kait/use-theme",
+  "version": "0.1.0",
+  "description": "Theme. Powered by React hooks.",
+  "main": "lib/index.js",
+  "typings": "lib/index.d.ts",
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "prepublishOnly": "tsc -b ."
+  },
+  "files": [
+    "lib"
+  ],
+  "keywords": [],
+  "author": "Resi Respati <resir014@gmail.com>",
+  "license": "MIT",
+  "peerDependencies": {
+    "react": "^16.7.0-alpha.0"
+  }
+}

@@ -1,4 +1,4 @@
 {
   "files": [],
-  "references": [{ "path": "use-vertical-scroll" }, { "path": "use-media" }]
+  "references": [{ "path": "use-vertical-scroll" }, { "path": "use-media" }, { "path": "use-theme" }]
 }

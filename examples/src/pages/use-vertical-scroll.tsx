@@ -1,15 +1,25 @@
 import * as React from 'react'
-import { Link, RouteComponentProps } from '@reach/router'
+import { RouteComponentProps } from '@reach/router'
 import useVerticalScroll from '../../../packages/use-vertical-scroll/src'
+import Page from '../components/Page'
+import styled from 'styled-components'
+import PageTitle from '../components/PageTitle'
 
-const styles: React.CSSProperties = {
-  position: 'fixed',
-  top: 0,
-  right: 0,
-  width: '250px',
-  padding: '16px',
-  textAlign: 'center'
+interface HeaderProps {
+  bgColor?: string
+  textColor?: string
 }
+
+const State = styled<HeaderProps, 'div'>('div')`
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 250px;
+  padding: 16px;
+  text-align: center;
+  color: ${props => props.textColor || '#fff'};
+  background-color: ${props => props.bgColor || '#006fe6'};
+`
 
 const VerticalScrollExample: React.SFC<RouteComponentProps> = () => {
   const shallowThreshold = useVerticalScroll(0, 249)
@@ -17,14 +27,15 @@ const VerticalScrollExample: React.SFC<RouteComponentProps> = () => {
   const deepThreshold = useVerticalScroll(500)
 
   return (
-    <div>
-      <h1>Vertical Scroll</h1>
-      {shallowThreshold && <div style={{ ...styles, backgroundColor: 'red', color: '#fff' }}>Scroll State: shallow</div>}
-      {mediumThreshold && <div style={{ ...styles, backgroundColor: 'yellow' }}>Scroll State: medium</div>}
-      {deepThreshold && <div style={{ ...styles, backgroundColor: 'blue', color: '#fff' }}>Scroll State: deep</div>}
-      <p>
-        <Link to="/">Go back home</Link>
-      </p>
+    <Page>
+      <PageTitle>Vertical Scroll</PageTitle>
+      {shallowThreshold && <State bgColor="red">Scroll State: shallow</State>}
+      {mediumThreshold && (
+        <State textColor="#333" bgColor="yellow">
+          Scroll State: medium
+        </State>
+      )}
+      {deepThreshold && <State>Scroll State: deep</State>}
 
       <p>
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Si enim Zenoni licuit, cum rem aliquam invenisset inusitatam, inauditum
@@ -162,7 +173,7 @@ const VerticalScrollExample: React.SFC<RouteComponentProps> = () => {
         possint, omnium ceterarum rerum obliti níhil abiectum, nihil humile cogitant; Nam prius a se poterit quisque discedere quam
         appetitum earum rerum, quae sibi conducant, amittere.{' '}
       </p>
-    </div>
+    </Page>
   )
 }
 

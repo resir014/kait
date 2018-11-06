@@ -1,9 +1,11 @@
 import * as React from 'react'
 import { Link, RouteComponentProps } from '@reach/router'
+import Page from '../components/Page'
+import PageTitle from '../components/PageTitle'
 
 const IndexPage: React.SFC<RouteComponentProps> = () => (
-  <div>
-    <h1>Examples</h1>
+  <Page>
+    <PageTitle>Examples</PageTitle>
     <ul>
       <li>
         <Link to="/use-media">Media Queries</Link>
@@ -12,7 +14,7 @@ const IndexPage: React.SFC<RouteComponentProps> = () => (
         <Link to="/use-vertical-scroll">Vertical Scroll</Link>
       </li>
     </ul>
-  </div>
+  </Page>
 )
 
 export default IndexPage

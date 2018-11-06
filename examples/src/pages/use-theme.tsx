@@ -17,10 +17,11 @@ const lightTheme: ThemeAttributes = {
   borderColor: '#f00'
 }
 
-const Header = styled('div')`
+const ThemeDemo = styled('div')`
   margin: 1.5rem 0;
   padding: 1.5rem;
   border: 3px solid ${(props: ThemeProps<ThemeAttributes>) => props.theme.borderColor};
+  border-radius: 8px;
   color: ${(props: ThemeProps<ThemeAttributes>) => props.theme.textColor};
   background-color: ${(props: ThemeProps<ThemeAttributes>) => props.theme.backgroundColor};
 `
@@ -32,7 +33,7 @@ const ThemeExample: React.SFC<RouteComponentProps> = () => {
   return (
     <Page>
       <PageTitle>Media Queries</PageTitle>
-      <Header theme={theme}>{isDarkTheme ? 'dark theme' : 'light theme'}</Header>
+      <ThemeDemo theme={theme}>{isDarkTheme ? 'dark theme' : 'light theme'}</ThemeDemo>
       <button onClick={() => setIsDarkTheme(!isDarkTheme)}>toggle theme</button>
     </Page>
   )

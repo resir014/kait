@@ -5,15 +5,6 @@ import Page from '../components/Page'
 import styled from 'styled-components'
 import PageTitle from '../components/PageTitle'
 
-const styles: React.CSSProperties = {
-  position: 'fixed',
-  top: 0,
-  right: 0,
-  width: '250px',
-  padding: '16px',
-  textAlign: 'center'
-}
-
 interface HeaderProps {
   bgColor?: string
   textColor?: string

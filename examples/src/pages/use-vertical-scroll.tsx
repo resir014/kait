@@ -1,6 +1,7 @@
 import * as React from 'react'
 import { Link, RouteComponentProps } from '@reach/router'
 import useVerticalScroll from '../../../packages/use-vertical-scroll/src'
+import Page from '../../components/Page'
 
 const styles: React.CSSProperties = {
   position: 'fixed',
@@ -17,7 +18,7 @@ const VerticalScrollExample: React.SFC<RouteComponentProps> = () => {
   const deepThreshold = useVerticalScroll(500)
 
   return (
-    <div>
+    <Page>
       <h1>Vertical Scroll</h1>
       {shallowThreshold && <div style={{ ...styles, backgroundColor: 'red', color: '#fff' }}>Scroll State: shallow</div>}
       {mediumThreshold && <div style={{ ...styles, backgroundColor: 'yellow' }}>Scroll State: medium</div>}
@@ -162,7 +163,7 @@ const VerticalScrollExample: React.SFC<RouteComponentProps> = () => {
         possint, omnium ceterarum rerum obliti níhil abiectum, nihil humile cogitant; Nam prius a se poterit quisque discedere quam
         appetitum earum rerum, quae sibi conducant, amittere.{' '}
       </p>
-    </div>
+    </Page>
   )
 }
 

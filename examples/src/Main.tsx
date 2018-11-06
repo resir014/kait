@@ -4,15 +4,17 @@ import { Router } from '@reach/router'
 import IndexPage from './pages'
 import MediaExample from './pages/use-media'
 import VerticalScrollExample from './pages/use-vertical-scroll'
+import { Normalize } from './styles/normalize'
 
 const Main = () => (
-  <div>
+  <main>
+    <Normalize />
     <Router>
       <IndexPage path="/" />
-      <MediaExample path="/use-media" />
-      <VerticalScrollExample path="/use-vertical-scroll" />
+      <MediaExample path="use-media" />
+      <VerticalScrollExample path="use-vertical-scroll" />
     </Router>
-  </div>
+  </main>
 )
 
 export default Main

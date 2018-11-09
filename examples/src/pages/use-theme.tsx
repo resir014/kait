@@ -27,7 +27,7 @@ const ThemeDemo = styled('div')`
 `
 
 const ThemeExample: React.SFC<RouteComponentProps> = () => {
-  const [isDarkTheme, setIsDarkTheme] = (React as any).useState(false)
+  const [isDarkTheme, setIsDarkTheme] = React.useState(false)
   const theme = useTheme(isDarkTheme ? darkTheme : lightTheme)
 
   return (

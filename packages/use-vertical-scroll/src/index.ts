@@ -19,16 +19,13 @@ export default function useVerticalScroll(topThreshold: number, bottomThreshold?
     }
   }
 
-  useEffect(
-    () => {
-      // Initial check, in case the user refreshed.
-      handleScroll()
+  useEffect(() => {
+    // Initial check, in case the user refreshed.
+    handleScroll()
 
-      window.addEventListener('scroll', handleScroll)
-      return () => window.removeEventListener('scroll', handleScroll)
-    },
-    [topThreshold]
-  )
+    window.addEventListener('scroll', handleScroll)
+    return () => window.removeEventListener('scroll', handleScroll)
+  }, [topThreshold])
 
   return scrolled
 }

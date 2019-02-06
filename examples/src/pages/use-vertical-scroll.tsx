@@ -10,15 +10,15 @@ interface HeaderProps {
   textColor?: string
 }
 
-const State = styled<HeaderProps, 'div'>('div')`
+const State = styled('div')`
   position: fixed;
   top: 0;
   right: 0;
   width: 250px;
   padding: 16px;
   text-align: center;
-  color: ${props => props.textColor || '#fff'};
-  background-color: ${props => props.bgColor || '#006fe6'};
+  color: ${(props: HeaderProps) => props.textColor || '#fff'};
+  background-color: ${(props: HeaderProps) => props.bgColor || '#006fe6'};
 `
 
 const VerticalScrollExample: React.SFC<RouteComponentProps> = () => {

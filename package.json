@@ -8,7 +8,8 @@
     "clean": "rimraf ./packages/*/lib",
     "dev": "parcel examples/index.html",
     "format": "prettier --write 'packages/**/*.{ts,tsx}'",
-    "lint": "tslint -p tsconfig.json"
+    "lint": "tslint -p tsconfig.json",
+    "type-check": "tsc --noEmit"
   },
   "devDependencies": {
     "@reach/router": "^1.2.1",

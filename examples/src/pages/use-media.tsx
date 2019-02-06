@@ -10,11 +10,11 @@ interface HeaderProps {
   textColor?: string
 }
 
-const Header = styled<HeaderProps, 'div'>('div')`
+const Header = styled('div')`
   margin: 1.5rem 0;
   padding: 1.5rem;
-  color: ${props => props.textColor || '#fff'};
-  background-color: ${props => props.bgColor || '#006fe6'};
+  color: ${(props: HeaderProps) => props.textColor || '#fff'};
+  background-color: ${(props: HeaderProps) => props.bgColor || '#006fe6'};
 `
 
 const MobileHeader = () => (

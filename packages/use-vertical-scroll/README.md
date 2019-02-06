@@ -21,7 +21,7 @@ function Navigation() {
   // with topThreshold and bottomThreshold
   const shallowThreshold = useVerticalScroll(0, 299)
   // without bottomThreshold. state will remain true after passing topThreshold.
-  const deepThreshold = useVerticalScroll(0, 300)
+  const deepThreshold = useVerticalScroll(300)
 
   return (
     <nav
